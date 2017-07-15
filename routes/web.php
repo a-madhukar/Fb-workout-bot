@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get("messages/webhook", "FacebookVerificationController@verify"); 
+
+
+
+Route::post("messages/webhook", "MessengerController@respond"); 

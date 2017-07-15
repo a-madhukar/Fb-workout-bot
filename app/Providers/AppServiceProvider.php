@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Services\HttpClient\Http; 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use App\Services\HttpClient\GuzzleImplementation as GuzzleImpl; 
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind(Http::class, GuzzleImpl::class); 
     }
 }
