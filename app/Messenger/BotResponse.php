@@ -96,6 +96,7 @@ class BotResponse
         $url = env("MESSENGER_RESPONSE_LINK") . env("FB_PAGE_TOKEN"); 
 
         info("responding to the user"); 
+        info($url); 
         info($url, $payload); 
 
        return app(Http::class)->post($url, $payload); 
